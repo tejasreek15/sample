@@ -1,0 +1,1 @@
+ SELECT s.sname, b.color, s.sid FROM sailors s JOIN reserves r ON r.sid=s.sid JOIN boats b ON r.bid=b.bid AND b.color='red' WHERE r.sid NOT IN( SELECT s.sid FROM sailors s JOIN reserves r ON r.sid=s.sid JOIN boats b ON r.bid=b.bid WHERE b.color='green' ); 
